@@ -8,12 +8,13 @@ Installing
 
 **Python 3.8 or higher is required**
 
-.. code:: sh
+```sh
     pip install git+https://github.com/PretendServices/pretend-api.git 
+```
 
 Usage example (Screenshot endpoint)
 
-.. code py 
+```py 
     import asyncio
     from PretendAPI import API 
     
@@ -25,5 +26,6 @@ Usage example (Screenshot endpoint)
     
     if __name__ == "__main__":
         asyncio.run(main())
+```
 
 You can find more examples in the examples folder
