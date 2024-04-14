@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import Literal, List
+from typing import Literal, List, Optional
 
 class APIKey(BaseModel):
     key: str 
@@ -25,7 +25,7 @@ class SnapchatStories(BaseModel):
 
 class TikTokUser(BaseModel):
     username: str 
-    nickname: str 
+    nickname: Optional[str] 
     avatar: str 
     bio: str 
     verified: bool 
