@@ -81,3 +81,6 @@ class SpotifySong(BaseModel):
 
 class ImageURL(BaseModel):
     image_url: str
+
+class CaptchaImage(ImageURL):
+    response: str

@@ -74,6 +74,7 @@ class API():
     ) -> str:
         """
         Uwuify a message
+        Example: hello -> hewwo
         
         Parameters
         ----------
@@ -276,7 +277,7 @@ class API():
             params={"prompt": prompt}
         )
 
-        return data['response']
+        return data['response'].replace("\\n", "\n")
     
     async def join_discord_server(
         self, 
@@ -388,7 +389,7 @@ class API():
     async def get_random_pfp(
         self,
         type: Literal['banners', 'pfps'],
-        category: Literal['anime', 'girl', 'roadmen', 'ceinory', 'cute', 'imsg', 'mix'],
+        category: Literal['anime', 'girl', 'roadmen', 'cute', 'imsg', 'mix'],
         format: Optional[Literal['png', 'gif']] = None
     ) -> ImageURL:
         """
@@ -398,7 +399,7 @@ class API():
         ----------
         type: :class:`Literal['banners', 'pfps']`
             The kind of picture you are trying to get
-        category :class:`Literal['anime', 'girl', 'roadmen', 'ceinory', 'cute', 'imsg', 'mix']`
+        category :class:`Literal['anime', 'girl', 'roadmen', 'cute', 'imsg', 'mix']`
             The picture category you are trying to fetch from 
         format: :class:`Optional[Literal['png', 'gif']]`
             The specific picture format you are trying to fetch. If not passed it will return a random gif or png
@@ -411,6 +412,14 @@ class API():
 
         return ImageURL(image_url=data['url'])
     
+    async def get_captcha_image(self) -> CaptchaImage:
+        """
+        Get a random captcha image along with the correct captcha response
+        """
+
+        data = await self.__do_request("/image/captcha")
+        return CaptchaImage(**data)
+
     async def screenshot(
         self,
         website_url: str,
@@ -431,7 +440,8 @@ class API():
             "/screenshot",
             params={
                 'url': website_url,
-                'timeout': timeout}
+                'timeout': timeout
+            }
         )
 
         return ImageURL(image_url=data['screenshot_url'])
