@@ -75,7 +75,7 @@ class InstagramStories(BaseModel):
 
 class SpotifySong(BaseModel):
     artist: str 
-    name: str 
+    title: str 
     image: str 
     download_url: str
 
