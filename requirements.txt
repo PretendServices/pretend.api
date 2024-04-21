@@ -1,3 +1,2 @@
 aiohttp
 pydantic
-discord.py

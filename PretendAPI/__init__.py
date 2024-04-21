@@ -390,7 +390,7 @@ class API():
         self,
         type: Literal['banners', 'pfps'],
         category: Literal['anime', 'girl', 'roadmen', 'cute', 'imsg', 'mix'],
-        format: Optional[Literal['png', 'gif']] = None
+        format: Literal['png', 'gif', None] = None
     ) -> ImageURL:
         """
         Get a random picture from a specific category
@@ -401,7 +401,7 @@ class API():
             The kind of picture you are trying to get
         category :class:`Literal['anime', 'girl', 'roadmen', 'cute', 'imsg', 'mix']`
             The picture category you are trying to fetch from 
-        format: :class:`Optional[Literal['png', 'gif']]`
+        format: :class:`Literal['png', 'gif', None]`
             The specific picture format you are trying to fetch. If not passed it will return a random gif or png
         """
 
