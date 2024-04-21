@@ -407,7 +407,7 @@ class API():
 
         data = await self.__do_request(
             f"/pictures/{type}/{category}",
-            params={"format": format}
+            params={"format": format} if format else None
         )
 
         return ImageURL(image_url=data['url'])
