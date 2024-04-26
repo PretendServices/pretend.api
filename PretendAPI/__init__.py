@@ -17,7 +17,7 @@ class API():
 
     def __init__(self, api_key: str): 
         self.api_key = api_key 
-        self.base_url = "https://v1.pretend.best"
+        self.base_url = "https://v1.pretend.bot"
         self.headers = {
             "api-key": self.api_key
         }

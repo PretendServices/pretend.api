@@ -12,6 +12,6 @@ setup(
     install_requires=requirements,
     python_requires='>=3.8.0',
     project_urls = {
-        "Documentation": "https://v1.pretend.best/docs"
+        "Documentation": "https://v1.pretend.bot/docs"
     }
 )

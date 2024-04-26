@@ -1,7 +1,7 @@
 pretend-api
 ==========
 
-A Python API wrapper for [pretend's API](https://v1.pretend.best)
+A Python API wrapper for [pretend's API](https://v1.pretend.bot)
 
 Installing
 ==========
